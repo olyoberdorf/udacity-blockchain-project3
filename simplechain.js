@@ -6,9 +6,7 @@
 const debug = require('debug')('simpleChain');
 
 const SHA256 = require('crypto-js/sha256');
-//const leveldb = require('./levelSandbox');
 
-// import of levelSandbox not working
 const level = require('level');
 const chainDB = './chaindata';
 const db = level(chainDB);
