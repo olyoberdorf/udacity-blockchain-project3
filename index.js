@@ -1,3 +1,5 @@
+const debug = require('debug')('restservice');
+
 const express = require('express');
 var bodyParser = require('body-parser');
 
@@ -17,14 +19,14 @@ function handle_err(err, res) {
 
 async function get_block(req, res) {
   let blockheight = req.params.blockheight;
+  debug('saw request for block at height: ' + blockheight);
   await blockchain.getBlock(blockheight).then((block) => res.send(block))
     .catch((err) => handle_err(err, res));
 }
 
 async function post_block(req, res) {
-  console.log(req.body);
+  debug('saw post of new block: ' + req.body);
   let block = req.body;
-  console.log(block);
   block = await blockchain.addBlock(block)
     .then(data => res.send(data))
     .catch((err) => res.status(501).send('Unknown error saving block'))
