@@ -1,12 +1,12 @@
 {
   "name": "project-3",
   "version": "1.0.0",
-  "description": "",
+  "description": "Udacity Blockchain Project 3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js"
   },
-  "author": "",
+  "author": "oly@oberdorf.org",
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
